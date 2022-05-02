@@ -139,26 +139,21 @@ The relevant data is the title of the video, the duration of the video, and the 
 The two key speeds of the data structures in this analysis is how long it takes to make, and how long it takes to access all the pieces of data to make a change. 
 The first graphic I have is the Structure vs. Build Time(in seconds). If you look below you can see that the BST took a long time to construct. 1/100th of a second is very slow for the relatively small dataset of 2000 variables. The built-in dictionary and my custom hash table is much faster. 
 <img src="lm2.png" height=300px>
-<pre><code>noms = ["HILLARY", "DONALD J TRUMP", "BIDEN"]
+<pre><code>def building(b):
+    # compare two cycles
+    test = [csv_to_p_bst,csv_to_p_dict,csv_to_p_hash]
+    a = perf_counter()
+    impThings = [[i(b), perf_counter()] for i in test]
+    impThings[0][1], impThings[1][1],impThings[2][1] = impThings[0][1] - a, impThings[1][1] - impThings[0][1],impThings[2][1] - impThings[1][1]
+    return impThings</pre></code>
+Next we have accessing the data. To test this I wrote a method that would loop through the keys that we have and look for it in each dataset, then change the duration from a string into a float number of minutes. Now the BST did not actually finish running, it got through the first couple hundred observations then slowly halted. I marked this on the graph as 0, because I waited for a couple minutes and it didn’t finish. But the dictionary that I wrote myself wasn’t that much slower than the built-in dictionary but they are both much faster than the binary search tree. It seems that a dictionary is the best data structure to store this data.
 
-# filter 20s candidates who only received co-donations with nominees
-innr = [i for i in d[next(iter(d))] if sum([d[o][i] for o in d if o not in noms])]
-
-# rank 20s candidates donor counts
-innr = sorted(innr, key = lambda i : sum([d[o][i] for o in d]))[::-1]
-
-# filter 16s candidates who only received co-donations with nominees
-outr = [o for o in d if sum([d[o][i] for i in innr if i not in noms])]
-
-# sort inner and outer dictionaries
-d = { o : { innr[i] : d[o][innr[i]] for i in range(len(innr)) } for o in outr }
-d = dict(sorted(list(d.items()), key = lambda x : sum(x[1].values()))[::-1])</pre></code>
-
+<pre><code></pre></code>
 <h2 >The Visualization</h2>
 
 I don't really know how Seaborn works, so I just ran it with default settings and looked up things that annoyed me. I wanted a transparent background and nice color theme in the graph to display with the website HTML theme, had to make it high resolution so I could read the (many) labels, and copied a script from Stack Overflow that manipulated tick marks to move labels from the bottom to the top of the x axis. Otherwise, I simply ran a heatmap over the dictionary and presented what I found!
 
-<pre><code></pre></code>
+
 
 <p>I did touch up a bit with Glimpse at the end. I converted the black font via color exchange to match the HTML text color, and placed the image on a black background for distribution outside of the host page. I also clipped the tick marks from the legend as they were unhelpfully quantitative.</p><br><br>
 
