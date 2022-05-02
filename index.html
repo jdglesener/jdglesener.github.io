@@ -72,16 +72,9 @@
 
 <h2 >The Data</h2>
 
-I drew from FEC individual contributions. You can look at the data for yourself:
-
-<ul>
-  <li><a href="https://www.kaggle.com/datasets/ashishjangra27/geeksforgeeks-youtube?resource=download">Geeks for Geeks youtube information</a></li>
-</ul>
-
-This should be static, but was retrieved on 19 April 2022. The originals are retained under version control. As the files are too large to be stored on Github, they are uploaded in parts with the split/combine script also provided. You can also run on partial data, which generally appeared to be representative.
-
-I found the csv lines to be extremely low in information density, and over time refined a line reader that I would use when reading lines into an internal data structure.
-
+The data is taken from Kaggle and is about the Geeks for Geeks youtube channel, but the actual data itself is not super relevant to the analysis done in this project. There are 2000 observations of 9 variables. If you did want to do some analysis however, I figured there could possibly be a relationship between the duration of the video and the number of the views. There also needs to be some key so that each video is unique. 
+So the getkey() method takes a line of the csv and returns the relevant information as a list to be stored into a data structures
+You can look at the data <a href="https://www.kaggle.com/datasets/ashishjangra27/geeksforgeeks-youtube>here<\a>
 <pre><code># get key, value from line
 def get_kv(l):
 	# we need the 13th column but quotes mix it up
