@@ -146,7 +146,8 @@ The first graphic I have is the Structure vs. Build Time(in seconds). If you loo
     test = [csv_to_p_bst,csv_to_p_dict,csv_to_p_hash]
     a = perf_counter()
     impThings = [[i(b), perf_counter()] for i in test]
-    impThings[0][1], impThings[1][1],impThings[2][1] = impThings[0][1] - a, impThings[1][1] - impThings[0][1],impThings[2][1] - impThings[1][1]
+    impThings[0][1], impThings[1][1],impThings[2][1] = impThings[0][1] - a,
+    	impThings[1][1] - impThings[0][1],impThings[2][1] - impThings[1][1]
     return impThings</pre></code>
 Next we have accessing the data. To test this I wrote a method that would loop through the keys that we have and look for it in each dataset, then change the duration from a string into a float number of minutes. Now the BST did not actually finish running, it got through the first couple hundred observations then slowly halted. I marked this on the graph as 0, because I waited for a couple minutes and it didn’t finish. But the dictionary that I wrote myself wasn’t that much slower than the built-in dictionary but they are both much faster than the binary search tree. It seems that a dictionary is the best data structure to store this data.
 <center>
