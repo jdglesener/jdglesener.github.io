@@ -1,176 +1,139 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<meta property="og:image" content="lm3.png" />
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      font-size: 18px;
+    }
 
-	<title>Data for Data</title>
-	
-	<style type="text/css" media="screen">
-	
-		body {
-			line-height: 140%;
-			margin: auto;
-			width: 800px;
-		}
-		code {font-size: 120%;}
-		
-		
-		pre code {
-			background-color: #7D1616;
-			color: #ECE8FE;
-			
-			display: block;
-			padding: 20px;
-		}
-		
-		.centered {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-}
-		
-	</style>
-	
+    header {
+      background-color: #f5f5f5;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 0 30px;
+      justify-content: center;
+    }
+
+    header .header-content {
+      max-width: 1100px;
+      display: flex;
+      width: 100%;
+    }
+
+    header img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-right: 30px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    header h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+    }
+
+    .about, .resume, .custom-section {
+      padding: 25px;
+      border: 1px solid #ccc;
+      background-color: #f5f5f5;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    .about {
+      width: 60%;
+      margin-right: 10px;
+    }
+
+    .resume {
+      width: 30%;
+      margin-right: 10px;
+    }
+
+    .custom-section {
+      width: 100%;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .resume-preview {
+      border: 1px solid #ccc;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+      margin-top: 15px;
+    }
+
+    .resume-preview iframe {
+      position: absolute;
+      top: -80px;
+      left: 0;
+      width: 100%;
+      height: 400px;
+    }
+  </style>
 </head>
-
-<body bgcolor="#FFC7C7" text="7D1616">
-
-<style>
- body {
-        counter-reset: h1counter;
-    }
-    h1 {
-        counter-reset: h2counter;
-    }
-    h2 {
-        counter-reset: h3counter;
-    }
-    h2:before {
-        content: counter(h2counter) ".\0000a0\0000a0";
-        counter-increment: h2counter;
-    }
-    h3:before {
-        content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
-        counter-increment: h3counter;
-    }
-</style>
-	
-<h1 id="preamble">Data Structures for Data Analysis for Data Visualization for the Content</h1>
-
-<p>I am very interested in content creation and all the work that goes into it. A large part of creating entertaining content is repeating things that are successful or "work for the algorithm". I took a dataset from a youtube channel and looked at the process of setting up for analysis.</p>
-
-<p>See the source code <a href="https://github.com/jdglesener/CS241FinalProject">here</a>
-
-<center>
-<img src="lm3.png" height=300px>
-</center>
-
-<h2 >The Data</h2>
-
-The data is taken from Kaggle and is about the Geeks for Geeks youtube channel, but the actual data itself is not super relevant to the analysis done in this project. There are 2000 observations of 9 variables. If you did want to do some analysis however, I figured there could possibly be a relationship between the duration of the video and the number of the views. There also needs to be some key so that each video is unique. 
-So the getkey() method takes a line of the csv and returns the relevant information as a list to be stored into a data structures
-You can look at the data <a href="https://www.kaggle.com/datasets/ashishjangra27/geeksforgeeks-youtube">here</a>
-<pre><code># get key value from line
-def get_key(l):
-    views = ""
-    title = ""
-    duration = ""
-    commas = 0
-    quotes = False
-    for c in l:
-        if c == '\"':
-            quotes = not quotes
-        if commas == 0:
-            duration += c
-        if commas == 1:
-            title += c
-        if commas == 2:
-            views += c
-        if c == ',' and not quotes:
-            commas += 1    
-    return [title[:-1], views[:-1], duration[:-1]]</code></pre>
-The relevant data is the title of the video, the duration of the video, and the number of views it got to create a potential views v duration scatterplot.
-<h2 >The Structure</h2>
-
-	<p>I put the lists from each line into 3 separate data structures, the Binary Search Tree class from our second homework assignment, the built-in dictionary, and the Hashing dictionary class that is written here. </p>
-	<pre><code>class LibTable():
-    def __init__(self, key = None, val = None):
-        self.size = 5000
-        self.table = [[] for i in range(self.size)]
-        self.keys = [key]
-        if val:
-            self.table[hash(key)%self.size].append((val,key))
-    
-    def insert(self, key, val):
-        self.keys.append(key)
-        if type(key) != list:
-            self.table[hash(key)%self.size].append((val,key))
-        else:
-            self.table[hash(key[0])%self.size].append((val,key))
-    
-    def get(self, key):
-        if type(key) != list:
-            ind = hash(key)%self.size
-        else:
-            ind = hash(key[0])%self.size
-        if key in self.keys:
-            for i in self.table[ind]:
-                if key in i:
-                    return i[0]
-
-    def get_keys(self):
-        return self.keys
-
-    
-    def __repr__(self):
-        return str(self.table)
-    
-    def __str__(self):
-        return self.__repr__()</pre></code>
-	
-<h2 >The Analysis</h2>
-
-
-The two key speeds of the data structures in this analysis is how long it takes to make, and how long it takes to access all the pieces of data to make a change. 
-The first graphic I have is the Structure vs. Build Time(in seconds). If you look below you can see that the BST took a long time to construct. 1/100th of a second is very slow for the relatively small dataset of 2000 variables. The built-in dictionary and my custom hash table is much faster. 
-<center>
-<img src="lm.png" height=300px>
-</center>
-<pre><code>def building(b):
-    # compare two cycles
-    test = [csv_to_p_bst,csv_to_p_dict,csv_to_p_hash]
-    a = perf_counter()
-    impThings = [[i(b), perf_counter()] for i in test]
-    impThings[0][1], impThings[1][1],impThings[2][1] = impThings[0][1] - a,
-    	impThings[1][1] - impThings[0][1],impThings[2][1] - impThings[1][1]
-    return impThings</pre></code>
-Next we have accessing the data. To test this I wrote a method that would loop through the keys that we have and look for it in each dataset, then change the duration from a string into a float number of minutes. Now the BST did not actually finish running, it got through the first couple hundred observations then slowly halted. I marked this on the graph as 0, because I waited for a couple minutes and it didn’t finish. But the dictionary that I wrote myself wasn’t that much slower than the built-in dictionary but they are both much faster than the binary search tree. It seems that a dictionary is the best data structure to store this data.
-<center>
-<img src="lm2.png" height=300px>
-</center>
-<pre><code>def accessing(structures,b):
-    bst = structures[0][0]
-    dict = structures[1][0]
-    hasher = structures[2][0]
-    a = perf_counter()
-    accessTimes = []
-    """for key in b:
-        bst.find(key)[2] = toTime(bst.find(key)[2])"""
-    accessTimes.append(perf_counter()-a)
-    a = perf_counter()
-    for key in b:
-        dict[key[0]][2] = toTime(dict[key[0]][2])
-    accessTimes.append(perf_counter()-a)
-    a = perf_counter()
-    for key in b:
-        lst = hasher.get(key[0])
-        lst[2] = toTime(hasher.get(key[0])[2])
-    accessTimes.append(perf_counter()-a)
-    return accessTimes</pre></code>
+<body>
+  <header>
+    <div class="header-content">
+      <img src=".\picture.jpg" alt="Your Name">
+      <div>
+        <h1>Your Name</h1>
+        <h2>Your Title</h2>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="about">
+      <h3>About Me</h3>
+      <p>
+        A little snippet about you. This is where you can write a brief introduction about yourself, your experiences, and your skills.
+      </p>
+    </section>
+    <section class="resume">
+      <h3>Resume</h3>
+      <p>
+        <a href=".\resume.pdf" target="_blank">Download PDF Resume</a>
+      </p>
+      <div class="resume-preview">
+        <iframe src=".\resume.pdf" frameborder="0"></iframe>
+      </div>
+    </section>
+  </main>
 </body>
-</html>
