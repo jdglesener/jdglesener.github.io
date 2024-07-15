@@ -17,7 +17,6 @@
     header {
       background-color: #f5f5f5;
       height: 250px;
-      display: flex;
       align-items: center;
       position: relative;
       padding: 0 30px;
@@ -30,7 +29,7 @@
       width: 100%;
     }
 
-    header img {
+    body img {
       border-radius: 50%;
       width: 120px;
       height: 120px;
@@ -50,9 +49,6 @@
     }
 
     main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       padding: 40px;
       max-width: 1100px;
       margin: 0 auto;
@@ -110,30 +106,34 @@
   </style>
 </head>
 <body>
-  <header class="bg-light">
+  <header class="bg-dark text-light">
     <div class="header-content">
-      <img src=".\picture.jpeg" alt="Your Name">
+
       <div>
         <h1>Jordan Glesener</h1>
-        <h2>Data Science Specialist</h2>
-        <a href="cs251final.html"></a>
+        <h2>Data Specialist</h2>
       </div>
     </div>
+    <nav class="d-flex flex-wrap align-items-center justify-content-evenly bg-dark">
+      <ul class="nav col-12 col-md-auto justify-content-center">
+        <li><a href="index.html" class="nav-link px-4 link-light link-opacity-100">
+          <h4>Home</h2>
+        </a></li>
+        <li><a href="projects/connect.html" class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+            <h4>Data Projects</h2>
+          </a></li>
+        <li><a href="projects/events.html" class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+            <h4>Computer Science Projects</h2>
+          </a></li>
+      </ul>
+    </nav>
   </header>
-  <nav class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 sticky-top bg-light">
-    <ul class="nav col-12 col-md-auto justify-content-center">
-      <li><a href="connect.html" class="nav-link px-4 link-dark link-opacity-50 link-opacity-100-hover">
-          <h2>Data Projects</h2>
-        </a></li>
-      <li><a href="events.html" class="nav-link px-4 link-dark link-opacity-50 link-opacity-100-hover">
-          <h2>Computer Science Projects</h2>
-        </a></li>
-    </ul>
-    <div></div>
-  </nav>
+  
   <main>
+    <div class="d-flex justify-content-center">
     <section class="about bg-light">
       <h3>About Me</h3>
+      <img src=".\picture.jpeg" alt="Your Name">
       <p>
         Data Scientist who has a Computer Science background. Uses Computer Science background to help break down big problems into smaller parts and demonstrate an ability to operate as an individual within a system. Fast learner: Finished college in 3 years with 2 Bachelors and a Masters and learned 6 computing languages.
       </p>
@@ -147,5 +147,41 @@
         <iframe src=".\Data_Resume.pdf" frameborder="0"></iframe>
       </div>
     </section>
+    </div>
+    <h1>Proficiencies</h1>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Experience</th>
+          <th>Proficiency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R</td>
+          <td>3.5 Years</td>
+          <td>Advanced</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>4 years</td>
+          <td>Advanced</td>
+        </tr>
+        <tr>
+          <td>Java</td>
+          <td>1 Year</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>HTML/CSS</td>
+          <td>4 years</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+      </tbody>
+    </table>
   </main>
 </body>
