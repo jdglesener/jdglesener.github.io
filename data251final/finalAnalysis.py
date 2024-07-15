@@ -1,6 +1,6 @@
 #final project analysis
 from os import lstat
-from libTable import LibTable
+from data251final.libTable import LibTable
 from time import perf_counter
 import pandas
 import seaborn as sns
