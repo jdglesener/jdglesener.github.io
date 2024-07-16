@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../custom.css">
+
+</head>
+
+<body>
+    <header class="bg-dark text-light text-center sticky-top">
+        <div class="header-content justify-content-center">
+
+            <div>
+                <h1>Jordan Glesener</h1>
+                <h2>Data Specialist</h2>
+            </div>
+        </div>
+        <nav class="d-flex flex-wrap align-items-center justify-content-evenly bg-dark">
+            <ul class="nav col-12 col-md-auto justify-content-center">
+                <li><a href="../index.html" class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+                        <h4>Home</h2>
+                    </a></li>
+                <li><a href="data-projects.html"
+                        class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+                        <h4>Data Projects</h2>
+                    </a></li>
+                <li><a href="cs-projects.html" class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+                        <h4>Computer Science Projects</h2>
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="mainProjects">
+        <div class = "text-center">
+        <h1>
+            Stars With Exoplanets
+        </h1><br>
+        <section id="hrSection">
+            <img id="hrImg" src="img/hr.png" class="img-fluid">
+        </section>
+        <section id="projectLinks">
+            <button class = "btn btn-secondary" href="assets/Data-299 Final.pdf">Presentation Of Findings</button>            
+        </section>
+        </div>
+        <hr>
+        <section id="overview">
+            <h2>Project Overview</h2>
+            <p id="indent">
+                Our research focused on identifying potential relationships between the positions of stars on the Hertzsprung-Russell 
+                (HR) diagram and the presence and number of exoplanets they host. 
+                By utilizing data from the NASA Exoplanet Archive (TESS Satellite) and the Gaia Archive (Data Release 2), 
+                we analyzed a dataset of 1651 stars with projected exoplanets. 
+                Our comprehensive approach included data collection, processing, and visualization. We sourced and merged the datasets, 
+                ensuring accuracy and consistency, and created HR diagrams to visualize our findings. Our analysis revealed notable patterns, 
+                such as the absence of white dwarfs with exoplanets and the challenges in detecting exoplanets around large, bright blue stars. 
+                Throughout this project, we honed skills in Python programming, data merging, astrophysics concepts, and data analysis. 
+                Moving forward, we plan to investigate individual outlier stars, conduct detailed statistical analyses, 
+                update our dataset with the latest releases, and collaborate with experts in physics and astronomy to deepen our understanding 
+                and refine our conclusions.
+            </p>
+        </section>
+        <section id="analysis">
+            <h2>Problem Statement:</h2>
+            <p id="indent">
+                Our research aimed to determine if there is a discernible relationship between the location of stars on the Hertzsprung-Russell 
+                (HR) diagram and the presence of exoplanets, as well as the number of exoplanets they may possess. 
+                We utilized data from the NASA Exoplanet Archive (TESS Satellite) and the Gaia Archive (Data Release 2), 
+                encompassing a total of 34,250 projected exoplanets.
+            </p>
+        </section>
+
+        <section id="visualization">
+            <h2>Solution:</h2>
+            <p id="indent">
+                To explore this relationship, we undertook the following steps:
+            </p>
+            <h3 id="indent">Data Collection:</h3>
+            <p id="indent">
+                We sourced data from the NASA Exoplanet Archive and the Gaia Archive.
+                Using the Gaia Archive search tool, we combined the star and exoplanet data, 
+                resulting in a dataset of 1651 stars with exoplanets.
+            </p>
+            <h3 id="indent">Data Processing:</h3>
+            <p id="indent">
+                We counted the number of times each host star appeared using a dictionary data structure.
+                We merged the two datasets, ensuring correct formatting and filtering out unnecessary columns.
+            </p>        
+            <h3 id="indent">Data Visualization:</h3>
+            <p id="indent">
+                We created HR diagrams using key parameters such as color (B band - R band) and absolute magnitude. 
+                We initially created an HR diagram with all our stars.
+                Subsequently, we divided the data into several number brackets to examine different patterns.
+            </p>  
+            <h3 id="indent">Results:</h3>
+            <p id="indent">
+                Our analysis revealed that there are no white dwarfs with exoplanets, likely due to post-supernova conditions.
+                For large and bright blue stars, measurement challenges and strong gravitational forces may explain the absence
+                of detected exoplanets.
+
+            </p>  
+        </section>
+
+        <section id="skills">
+            <h2>Skills Learned:</h2>
+            <div id="indent">
+                <ul>
+                    <li>Python Programming: Using libraries such as Matplotlib, Pandas, and Numpy for data analysis and visualization</li>
+                    <li>Data Merging: Combining datasets from different sources and resolving naming differences</li>
+                    <li>Astrophysics Concepts: Understanding and applying concepts related to HR diagrams and stellar magnitudes</li>
+                    <li>Data Analysis: Analyzing and interpreting large datasets to draw meaningful conclusions</li>
+                </ul>
+            </div> 
+        </section>
+        <section id="nextSteps">
+            <h2>Next Steps:</h2>
+            <h3 id="indent">Future plans include:</h3>
+            <div id="indent">
+                <ul>
+                    <li>Investigate Outliers: Examine individual outlier stars to understand any unique characteristics or anomalies</li>
+                    <li>Statistical Analysis: Conduct a detailed statistical analysis on the properties of the stars beyond visual inspection of the HR diagram</li>
+                    <li>Update Data: Use the latest data releases to ensure our findings are based on the most current information available</li>
+                    <li>Consult Experts: Collaborate with physics and astronomy experts to refine our analysis and conclusions</li>
+                </ul>
+            </div>
+        </section>
+        <section id="nextSteps">
+            <h2>Collaborators:</h2>
+            <div id="indent">
+                <ul>
+                    <li><a href="https://camdin-dirn.github.io/Project-Website/index.html">Camdin Dirnberger</a></li>
+                </ul>
+            </div> 
+        </section>
+    </main>
+    </body>
+    </html>

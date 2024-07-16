@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../custom.css">
+
+</head>
+
+<body>
+    <header class="bg-dark text-light text-center sticky-top">
+        <div class="header-content justify-content-center">
+
+            <div>
+                <h1>Jordan Glesener</h1>
+                <h2>Data Specialist</h2>
+            </div>
+        </div>
+        <nav class="d-flex flex-wrap align-items-center justify-content-evenly bg-dark">
+            <ul class="nav col-12 col-md-auto justify-content-center">
+                <li><a href="../index.html" class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+                        <h4>Home</h2>
+                    </a></li>
+                <li><a href="data-projects.html"
+                        class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+                        <h4>Data Projects</h2>
+                    </a></li>
+                <li><a href="cs-projects.html" class="nav-link px-4 link-light link-opacity-75 link-opacity-100-hover">
+                        <h4>Computer Science Projects</h2>
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="mainProjects">
+        <div class = "text-center">
+        <h1>
+            Real Estate Dashboard
+        </h1><br>
+        <section id="hrSection">
+            <img id="powerImg" src="img/powerbi.png" class="img-fluid">
+        </section>
+        <section id="projectLinks">
+            <button class = "btn btn-secondary" href="#">Power Bi Dashboard</button>            
+        </section>
+        </div>
+        <hr>
+        <section id="overview">
+            <h2>Project Overview</h2>
+            <p id="indent">
+                During our final semester of undergraduate studies, my classmates 
+                and I undertook the creation of a comprehensive housing market dashboard to
+                aid in navigating the post-college housing landscape. 
+                Our primary aim was to develop a tool that would provide invaluable insights into housing options, particularly in Salem. 
+                Leveraging RapidAPI, we meticulously scraped real estate data encompassing properties for sale, sold listings, 
+                and rental offerings.
+                Ensuring data integrity and consistency, our process was managed within a Docker container setup. Subsequently,
+                we implemented a robust data storage solution using PostgreSQL hosted on Railway, enabling real-time updates and 
+                reliable data access.
+                To empower users with actionable insights, we integrated this data with Power BI to craft an interactive dashboard. 
+                This platform allows users to explore and filter housing options based on specific criteria, facilitating informed decisions 
+                about renting or buying homes in Salem. Through this project, we honed skills in Power BI for dynamic visualizations, PostgreSQL 
+                for database management, and ETL processes for seamless data integration, 
+                positioning us to expand our dashboard's coverage statewide and refine its features based on user feedback and emerging market 
+                trends.
+            </p>
+        </section>
+
+        <section id="analysis">
+            <h2>Problem Statement:</h2>
+            <p id="indent">
+                During our final semester of undergraduate studies, 
+                my classmates and I aimed to create a tool to help us navigate the housing market as we prepared to start our careers 
+                and lives post-college. We wanted a dashboard that would provide insights into the best course of action regarding housing options.
+
+            </p>
+        </section>
+
+        <section id="visualization">
+            <h2>Solution:</h2>
+            <p id="indent">
+                GlazingGuru Pro is the solution designed to address this communication challenge. 
+                Built by an installer for installers, GlazingGuru leverages my domain knowledge to improve communication across all levels of 
+                a glass installation project.
+            </p>
+            <h3 id="indent">Data Collection:</h3>
+            <p id="indent">
+                We scraped real estate data for properties that were for sale, sold, and for rent in Salem using RapidAPI.
+                This data collection process was executed within a Docker container to ensure consistency and manageability.
+            </p>
+            <h3 id="indent">Data Storage:</h3>
+            <p id="indent">
+                The scraped data was live-dumped into a PostgreSQL database hosted by Railway, ensuring real-time updates and reliable data storage.
+            </p>
+            <h3 id="indent">Data Visualization:</h3>
+            <p id="indent">
+                We connected the PostgreSQL database to a Power BI report, enabling us to create an interactive and user-friendly dashboard.
+                The dashboard displays various housing options and their costs, 
+                allowing users to filter based on features they desire and easily find available properties in Salem.
+                This dashboard helps users, including ourselves, 
+                to make informed decisions about renting or buying homes in Salem based on up-to-date market data.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills Learned:</h2>
+            <div id="indent">
+                <ul>
+                    <li>Power BI: Creating dynamic reports and visualizations</li>
+                    <li>PostgreSQL: Managing and querying a relational database</li>
+                    <li>ETL (Extract, Transform, Load): Developing efficient data pipelines for real-time data processing</li>
+                    <li>Database Design: Structuring databases to support efficient data storage and retrieval</li>
+                    <li>Data Engineering: Building a robust system for data collection, storage, and visualization</li>
+                </ul>
+            </div>
+        </section>
+        <section id="nextSteps">
+            <h2>Next Steps:</h2>
+            <h3 id="indent">To enhance the utility of our dashboard, we plan to:</h3>
+            <div id="indent">
+                <ul>
+                    <li>Expand Data Coverage: Extend our data scraping and analysis to include the entire state of Oregon, 
+                        providing a broader range of housing market insights</li>
+                    <li>Refine Features: Continuously improve the dashboard’s features and usability based on user 
+                        feedback and emerging data trends.</li>
+                </ul>
+            </div> 
+        </section>
+        <section id="nextSteps">
+            <h2>Collaborators:</h2>
+            <div id="indent">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/rahamilton19/">Reese Hamilton</a></li>
+                    <li><a href="https://camdin-dirn.github.io/Project-Website/index.html">Camdin Dirnberger</a></li>
+                </ul>
+            </div> 
+        </section>
+    </main>
+</body>
+</html>
