@@ -16,7 +16,6 @@ header {
 }
 
 header .header-content {
-  max-width: 1100px;
   display: flex;
   width: 100%;
 }
@@ -26,7 +25,6 @@ header .header-content {
   width: 120px;
   height: 120px;
   object-fit: cover;
-  margin-right: 30px;
 }
 
 header h1 {
